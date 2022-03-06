@@ -1,11 +1,10 @@
 import { FC } from 'react';
-import { Typography } from '@mui/material';
-const Page1: FC = () => {
+import { Typography, Grid } from '@mui/material';
 
+const Home: FC = () => {
     return (
-        <div className="root">
-           <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 pb-5">
-            <div className="col-span-1 mx-auto my-auto">
+        <Grid container style={{ backgroundColor: 'powderblue'}}>
+           <Grid container item xs={12} md={6} justifyContent='center' alignItems='center'>
                 <Typography variant='h2'>
                     Hi There&nbsp;
                     <span role="img" aria-label="hi">
@@ -15,8 +14,8 @@ const Page1: FC = () => {
                 <Typography variant='h4'>
                     Nice to meet you.
                 </Typography>
-            </div>
-            <div className="mx-auto col-span-1 md:pt-10 respdiv">
+            </Grid>
+            <Grid item xs={12} md={6}>
                 <p className="text-lg lg:text-xl lg:leading-relaxed leading-8">
                     Myself Nishant. I am a Self-taught&nbsp;
                     <span role="img" aria-label="graduate">
@@ -49,10 +48,9 @@ const Page1: FC = () => {
                     </span>
                     I also am a Travel Vlogger.
                 </p>
-            </div>
-        </div>
-        </div>
+            </Grid>
+        </Grid>
     );
 };
 
-export default Page1;
+export default Home;
