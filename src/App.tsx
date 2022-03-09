@@ -1,4 +1,5 @@
 import { Suspense, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import AOS from 'aos';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { getDesignTokens } from '_Styles/Theme';
@@ -12,12 +13,14 @@ function App() {
     useEffect(() => {
         AOS.init();
     }, []);
-    
+
     return (
         <Suspense fallback={Loading}>
-            <ThemeProvider theme={darkModeTheme}>
-                <Routing />
-            </ThemeProvider>
+            <BrowserRouter>
+                <ThemeProvider theme={darkModeTheme}>
+                    <Routing />
+                </ThemeProvider>
+            </BrowserRouter>
         </Suspense>
     );
 }
