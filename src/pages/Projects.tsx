@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-const Page2: FC = () => <div className="root">Hello from Page2</div>;
+const Projects: FC = () => <div>Hello from Projects</div>;
 
-export default Page2;
+export default Projects;

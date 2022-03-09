@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Outlet } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -156,14 +156,21 @@ const ResponsiveAppBar = () => {
                         }}
                     >
                         {pages.map((page, index) => (
-                            <Link
+                            <NavLink
                                 to={page.route}
                                 key={index}
-                                onClick={() => handleCloseNavMenu(page.route)}
+                                style={({ isActive }) => {
+                                    return {
+                                      display: "block",
+                                      margin: "1rem 0",
+                                      color: isActive ? "red" : "",
+                                    };
+                                }}
                             >
                                 {page.title}
-                            </Link>
+                            </NavLink>
                         ))}
+                        <Outlet />
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
