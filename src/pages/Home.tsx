@@ -85,6 +85,7 @@ const Home: FC = () => {
                             I also am a Travel Vlogger.
                         </CenterTypo>
                         <iframe
+                            title='Latest YouTube Video'
                             src="https://www.tubebuddy.com/quicknav/latestembed/UCHouZ86kSOoF52kJpIdQs3g"
                             frameBorder="0"
                             allowFullScreen

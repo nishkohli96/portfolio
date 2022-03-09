@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -14,9 +15,17 @@ import Switch from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
 import Logo from '_Icons/logo.png';
 
-const pages = ['Home', 'Projects', 'About', 'Contact'];
+const pages = [
+    { title: 'Home', route: '' },
+    { title: 'Projects', route: '/projects' },
+    { title: 'About', route: '/about' },
+    { title: 'Contact', route: '/contact' },
+];
 
 const ResponsiveAppBar = () => {
+    const history = useHistory();
+    console.log('history: ', history);
+
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     );
@@ -24,7 +33,10 @@ const ResponsiveAppBar = () => {
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) =>
         setAnchorElNav(event.currentTarget);
 
-    const handleCloseNavMenu = () => setAnchorElNav(null);
+    const handleCloseNavMenu = (page = '/') => {
+        setAnchorElNav(null);
+        history.push(page);
+    };
 
     const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         width: 62,
@@ -113,18 +125,20 @@ const ResponsiveAppBar = () => {
                                 horizontal: 'left',
                             }}
                             open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
+                            onClose={() => handleCloseNavMenu()}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
+                            {pages.map((page, index) => (
                                 <MenuItem
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
+                                    key={index}
+                                    onClick={() =>
+                                        handleCloseNavMenu(page.route)
+                                    }
                                 >
                                     <Typography textAlign="center" variant="h1">
-                                        {page}
+                                        {page.title}
                                     </Typography>
                                 </MenuItem>
                             ))}
@@ -141,13 +155,13 @@ const ResponsiveAppBar = () => {
                             },
                         }}
                     >
-                        {pages.map((page) => (
+                        {pages.map((page, index) => (
                             <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
+                                key={index}
+                                onClick={() => handleCloseNavMenu(page.route)}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.title}
                             </Button>
                         ))}
                     </Box>
