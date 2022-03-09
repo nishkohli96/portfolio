@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -15,16 +15,14 @@ import { styled } from '@mui/material/styles';
 import Logo from '_Icons/logo.png';
 
 const pages = [
-    { title: 'Home', route: '' },
+    { title: 'Home', route: '/' },
     { title: 'Projects', route: '/projects' },
     { title: 'About', route: '/about' },
     { title: 'Contact', route: '/contact' },
 ];
 
 const ResponsiveAppBar = () => {
-    // const history = useLocation();
-    // console.log('history: ', history);
-
+    
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     );
@@ -161,16 +159,16 @@ const ResponsiveAppBar = () => {
                                 key={index}
                                 style={({ isActive }) => {
                                     return {
-                                      display: "block",
-                                      margin: "1rem 0",
-                                      color: isActive ? "red" : "",
+                                        display: 'block',
+                                        margin: '1rem 0',
+                                        color: isActive ? 'red' : '',
                                     };
                                 }}
                             >
                                 {page.title}
                             </NavLink>
                         ))}
-                        <Outlet />
+                        {/* <Outlet /> */}
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
