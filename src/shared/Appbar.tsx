@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Switch from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
@@ -23,8 +22,8 @@ const pages = [
 ];
 
 const ResponsiveAppBar = () => {
-    const history = useHistory();
-    console.log('history: ', history);
+    // const history = useLocation();
+    // console.log('history: ', history);
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
@@ -34,8 +33,9 @@ const ResponsiveAppBar = () => {
         setAnchorElNav(event.currentTarget);
 
     const handleCloseNavMenu = (page = '/') => {
+        console.log('page: ', page);
         setAnchorElNav(null);
-        history.push(page);
+        // history.(page);
     };
 
     const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -156,13 +156,13 @@ const ResponsiveAppBar = () => {
                         }}
                     >
                         {pages.map((page, index) => (
-                            <Button
+                            <Link
+                                to={page.route}
                                 key={index}
                                 onClick={() => handleCloseNavMenu(page.route)}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page.title}
-                            </Button>
+                            </Link>
                         ))}
                     </Box>
 

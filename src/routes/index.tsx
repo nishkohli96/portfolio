@@ -1,5 +1,5 @@
 import { FC, lazy, Fragment } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Appbar from '_Shared/Appbar';
 import Footer from '_Shared/Footer';
@@ -13,11 +13,11 @@ const Routing: FC = () => {
             <Appbar />
             <Container>
                 <BrowserRouter>
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/projects" component={Projects} />
-                        <Route component={Page404} />
-                    </Switch>
+                    <Routes>
+                        <Route path="/" element={Home} />
+                        <Route path="/projects" element={Projects} />
+                        <Route element={Page404} />
+                    </Routes>
                 </BrowserRouter>
             </Container>
             <Footer />
