@@ -1,19 +1,26 @@
-import { Suspense } from 'react';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-
-import { store, persistor } from '_Redux/index';
+import { Suspense, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AOS from 'aos';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { getDesignTokens } from '_Styles/Theme';
 import Loading from '_Shared/Loading';
-import Routing from '_Routes/index';
+import Routing from '_Constants/Routes';
+import 'aos/dist/aos.css';
 
 function App() {
+    const darkModeTheme = createTheme(getDesignTokens('dark'));
+
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <Suspense fallback={Loading}>
-            <Provider store={store}>
-                <PersistGate loading={<Loading />} persistor={persistor}>
+            <BrowserRouter>
+                <ThemeProvider theme={darkModeTheme}>
                     <Routing />
-                </PersistGate>
-            </Provider>
+                </ThemeProvider>
+            </BrowserRouter>
         </Suspense>
     );
 }
