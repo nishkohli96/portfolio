@@ -15,6 +15,7 @@
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
         "@types/react-redux": "^7.1.18",
+        "aos": "^2.3.4",
         "axios": "^0.22.0",
         "react": "^17.0.2",
         "react-app-rewired": "^2.1.8",
@@ -55,6 +56,7 @@
         ]
     },
     "devDependencies": {
+        "@types/aos": "^3.0.4",
         "@types/react-router-dom": "^5.3.1",
         "prettier": "^2.4.1",
         "react-app-rewire-alias": "^1.1.3"
