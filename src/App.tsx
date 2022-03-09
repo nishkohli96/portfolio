@@ -4,7 +4,7 @@ import AOS from 'aos';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { getDesignTokens } from '_Styles/Theme';
 import Loading from '_Shared/Loading';
-import Routing from '_Routes/index';
+import Routing from '_Constants/Routes';
 import 'aos/dist/aos.css';
 
 function App() {
