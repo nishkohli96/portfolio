@@ -1,9 +1,10 @@
 import type { ElementType } from 'react';
-import { Library, Package } from 'lucide-react';
+import { GitFork, Library, Package, Star } from 'lucide-react';
 import { SiClaude } from 'react-icons/si';
 import { GithubIcon } from '@/components/brand-icons';
 import Section from '@/components/section';
 import { openSource } from '@/lib/data';
+import { getRepoStats, repoSlugFromUrl } from '@/lib/github';
 import { getMonthlyDownloads, packageNameFromUrl } from '@/lib/npm';
 
 const iconByName: Record<string, ElementType> = {
@@ -18,6 +19,9 @@ export default async function OpenSource() {
       downloads: project.npm
         ? await getMonthlyDownloads(packageNameFromUrl(project.npm))
         : null,
+      stats: project.npm
+        ? null
+        : await getRepoStats(repoSlugFromUrl(project.github)),
     })),
   );
 
@@ -67,6 +71,27 @@ export default async function OpenSource() {
                 ))}
               </div>
               <div className="mt-5 flex gap-3 border-t border-surface-border pt-4 text-sm">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-1.5 font-medium text-muted hover:text-foreground"
+                >
+                  <GithubIcon className="h-3.5 w-3.5" />
+                  Source
+                </a>
+                {project.stats && project.stats.stars > 0 && (
+                  <span className="inline-flex items-center gap-1 text-xs text-muted">
+                    <Star className="h-3.5 w-3.5" />
+                    {project.stats.stars}
+                  </span>
+                )}
+                {project.stats && project.stats.forks > 0 && (
+                  <span className="inline-flex items-center gap-1 text-xs text-muted">
+                    <GitFork className="h-3.5 w-3.5" />
+                    {project.stats.forks}
+                  </span>
+                )}
                 {project.npm && (
                   <a
                     href={project.npm}
@@ -77,15 +102,6 @@ export default async function OpenSource() {
                     npm
                   </a>
                 )}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-flex items-center gap-1.5 font-medium text-muted hover:text-foreground"
-                >
-                  <GithubIcon className="h-3.5 w-3.5" />
-                  Source
-                </a>
               </div>
             </div>
           );
