@@ -2,7 +2,7 @@ export function repoSlugFromUrl(githubUrl: string) {
   return new URL(githubUrl).pathname.replace(/^\//, '');
 }
 
-export async function getRepoStars(repoSlug: string): Promise<number | null> {
+export async function getRepoStats(repoSlug: string): Promise<{ stars: number; forks: number } | null> {
   try {
     const res = await fetch(`https://api.github.com/repos/${repoSlug}`, {
       next: { revalidate: 3600 },
@@ -12,7 +12,10 @@ export async function getRepoStars(repoSlug: string): Promise<number | null> {
       return null;
     }
     const data = await res.json();
-    return typeof data.stargazers_count === 'number' ? data.stargazers_count : null;
+    return {
+      stars: typeof data.stargazers_count === 'number' ? data.stargazers_count : 0,
+      forks: typeof data.forks_count === 'number' ? data.forks_count : 0,
+    };
   } catch {
     return null;
   }

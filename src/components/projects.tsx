@@ -1,14 +1,14 @@
-import { Star } from 'lucide-react';
+import { GitFork, Star } from 'lucide-react';
 import { GithubIcon } from '@/components/brand-icons';
 import Section from '@/components/section';
 import { projects, profile } from '@/lib/data';
-import { getRepoStars, repoSlugFromUrl } from '@/lib/github';
+import { getRepoStats, repoSlugFromUrl } from '@/lib/github';
 
 export default async function Projects() {
   const projectsWithStarts = await Promise.all(
     projects.map(async project => ({
       ...project,
-      stars: await getRepoStars(repoSlugFromUrl(project.github)),
+      stats: await getRepoStats(repoSlugFromUrl(project.github)),
     })),
   );
 
@@ -27,11 +27,21 @@ export default async function Projects() {
               <h3 className="font-mono text-sm font-semibold group-hover:text-accent">
                 {project.name}
               </h3>
-              {project.stars
+              {(project.stats?.stars || project.stats?.forks)
                 ? (
-                  <span className="inline-flex items-center gap-1 text-xs text-muted">
-                    <Star className="h-3.5 w-3.5" />
-                    {project.stars}
+                  <span className="inline-flex items-center gap-3 text-xs text-muted">
+                    {project.stats.stars > 0 && (
+                      <span className="inline-flex items-center gap-1">
+                        <Star className="h-3.5 w-3.5" />
+                        {project.stats.stars}
+                      </span>
+                    )}
+                    {project.stats.forks > 0 && (
+                      <span className="inline-flex items-center gap-1">
+                        <GitFork className="h-3.5 w-3.5" />
+                        {project.stats.forks}
+                      </span>
+                    )}
                   </span>
                 )
                 : (

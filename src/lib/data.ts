@@ -47,6 +47,20 @@ export const experience = [
 
 export const openSource = [
   {
+    name: 'awesome-apps-and-skills',
+    description:
+      'Curated apps, web tools, libraries, Claude skills and MCP servers, grouped by what you want to do — for developers, designers and marketers.',
+    github: 'https://github.com/nishkohli96/awesome-apps-and-skills',
+    tags: ['Awesome List', 'Claude', 'MCP', 'Productivity'],
+  },
+  {
+    name: 'reminder-desk',
+    description:
+      'Claude plugin and skill for daily to-do reminders — push notifications at the start of day, each task\'s time, a follow-up and end of day, until you tick it off.',
+    github: 'https://github.com/nishkohli96/reminder-desk',
+    tags: ['Claude Plugin', 'Push Notifications', 'Productivity'],
+  },
+  {
     name: 'rhf-mui-components',
     description:
       'React component library comprising 25+ reusable components that abstract Material UI and React Hook Form integrations into configurable building blocks.',
