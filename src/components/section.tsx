@@ -19,7 +19,7 @@ export default function Section({
       <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
         {title}
       </h2>
-      <div className="mt-8">
+      <div className="mt-5">
         {children}
       </div>
     </section>

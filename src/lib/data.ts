@@ -7,7 +7,7 @@ export const profile = {
   tagline:
     'Building scalable web apps across OTT, e-commerce & enterprise — with Next.js, Node.js and Typescript.',
   summary:
-    `7.5 years of experience shipping production web platforms for SonyLiv, Staples, and Maruti Suzuki. Led teams of up to 10 engineers, architected event-driven AWS systems, and maintain three open-source npm packages with ${combinedOSSDownloads}+ combined downloads.`,
+    `A FullStack Developer with 7.5 years of experience shipping production web platforms for SonyLiv, Staples, and Maruti Suzuki. Led teams of up to 10 engineers, architected event-driven AWS systems, and maintaining three open-source npm packages with ${combinedOSSDownloads}+ combined downloads.`,
   email: 'nishantkohli96@gmail.com',
   phone: '+91-7975751097',
   social: {
