@@ -3,10 +3,26 @@ import { GithubIcon, InstagramIcon, LinkedinIcon } from '@/components/brand-icon
 import { profile } from '@/lib/data';
 
 const links = [
-  { href: profile.social.email, label: 'Email', icon: Mail },
-  { href: profile.social.linkedin, label: 'LinkedIn', icon: LinkedinIcon },
-  { href: profile.social.github, label: 'GitHub', icon: GithubIcon },
-  { href: profile.social.instagram, label: 'Instagram', icon: InstagramIcon },
+  {
+    href: profile.social.email,
+    label: 'nishantkohli96',
+    icon: Mail
+  },
+  {
+    href: profile.social.linkedin,
+    label: 'nishkohli96',
+    icon: LinkedinIcon
+  },
+  {
+    href: profile.social.github,
+    label: 'nishkohli96',
+    icon: GithubIcon
+  },
+  {
+    href: profile.social.instagram,
+    label: 'nocturnal_nish',
+    icon: InstagramIcon
+  },
 ];
 
 export default function Footer() {
