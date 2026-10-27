@@ -12,7 +12,7 @@ const links = [
 export default function Footer() {
   return (
     <footer id="contact" className="border-t border-surface-border bg-surface">
-      <div className="mx-auto max-w-5xl px-5 py-14 text-center">
+      <div className="mx-auto max-w-5xl px-5 py-10 text-center">
         <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
           Let&apos;s build something.
         </h2>
