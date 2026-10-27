@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ThemeProvider from '@/components/theme-provider';
+import { combinedOSSDownloads } from '@/lib/data';
 import './globals.css';
 
 const geistSans = Geist({
@@ -16,12 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Nishant Kohli — Senior Full Stack Engineer',
   description:
-    'Portfolio of Nishant Kohli, Senior Full Stack Engineer specializing in React, Next.js, Node.js, TypeScript and AWS. Open-source maintainer of 3 npm packages with 23,000+ downloads.',
+    `Portfolio of Nishant Kohli, Senior Full Stack Engineer specializing in React, Next.js, Node.js, TypeScript and AWS. Open-source maintainer of 3 npm packages with ${combinedOSSDownloads}+ downloads.`,
   metadataBase: new URL('https://nishkohli96.vercel.app'),
   openGraph: {
     title: 'Nishant Kohli — Senior Full Stack Engineer',
     description:
-      'React, Next.js, Node.js & AWS engineer. Open-source maintainer with 23,000+ npm downloads.',
+      `React, Next.js, Node.js & AWS engineer. Open-source maintainer with ${combinedOSSDownloads}+ npm downloads.`,
     type: 'website',
   },
 };
