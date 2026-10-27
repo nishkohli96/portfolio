@@ -9,54 +9,13 @@ export const profile = {
   summary:
     `7.5 years of experience shipping production web platforms for SonyLiv, Staples, and Maruti Suzuki. Led teams of up to 10 engineers, architected event-driven AWS systems, and maintain three open-source npm packages with ${combinedOSSDownloads}+ combined downloads.`,
   email: 'nishantkohli96@gmail.com',
-  phone: '+91-9814110843',
+  phone: '+91-7975751097',
   social: {
     github: 'https://github.com/nishkohli96',
     linkedin: 'https://www.linkedin.com/in/nishkohli96/',
     instagram: 'https://instagram.com/nocturnal_nish',
     email: 'mailto:nishantkohli96@gmail.com',
   },
-};
-
-export const skills = {
-  Frontend: [
-    { name: 'React.js', url: 'https://react.dev' },
-    { name: 'Next.js', url: 'https://nextjs.org' },
-    { name: 'Vite', url: 'https://vite.dev' },
-    { name: 'Redux', url: 'https://redux.js.org' },
-    { name: 'Material UI', url: 'https://mui.com' },
-    { name: 'React Hook Form', url: 'https://react-hook-form.com' },
-    { name: 'Tailwind CSS', url: 'https://tailwindcss.com' },
-    { name: 'Storybook', url: 'https://storybook.js.org' },
-  ],
-  Backend: [
-    { name: 'Node.js', url: 'https://nodejs.org' },
-    { name: 'Express.js', url: 'https://expressjs.com' },
-    { name: 'TypeScript', url: 'https://www.typescriptlang.org' },
-    { name: 'NestJS', url: 'https://nestjs.com' },
-    { name: 'GraphQL', url: 'https://graphql.org' },
-    { name: 'Algolia', url: 'https://www.algolia.com' },
-    { name: 'Socket.io', url: 'https://socket.io' },
-    { name: 'Redis', url: 'https://redis.io' },
-  ],
-  Cloud: [
-    { name: 'AWS S3', url: 'https://aws.amazon.com/s3/' },
-    { name: 'AWS SES', url: 'https://aws.amazon.com/ses/' },
-    { name: 'AWS SNS', url: 'https://aws.amazon.com/sns/' },
-    { name: 'AWS SQS', url: 'https://aws.amazon.com/sqs/' },
-    { name: 'AWS Lambda', url: 'https://aws.amazon.com/lambda/' },
-    { name: 'Docker', url: 'https://www.docker.com' },
-    { name: 'GitHub Actions', url: 'https://github.com/features/actions' },
-  ],
-  DataBase: [
-    { name: 'MongoDB', url: 'https://www.mongodb.com' },
-    { name: 'MySQL', url: 'https://www.mysql.com' },
-    { name: 'PostgreSQL', url: 'https://www.postgresql.org' },
-    { name: 'Mongoose', url: 'https://mongoosejs.com' },
-    { name: 'Sequelize', url: 'https://sequelize.org' },
-    { name: 'Contentful', url: 'https://www.contentful.com' },
-    { name: 'DatoCMS', url: 'https://www.datocms.com' },
-  ],
 };
 
 export const experience = [
@@ -137,6 +96,8 @@ export const projects = [
 ];
 
 export const certifications = [
+  'Introduction to Model Context Protocol - Claude Academy (2026)',
+  'Claude 101 & Claude Code 101 - Claude Academy (2026)',
   'SEO Foundations — LinkedIn (2023)',
   'GraphQL Essential Training — LinkedIn (2023)',
   'AWS Certified Solutions Architect Associate (2021)',

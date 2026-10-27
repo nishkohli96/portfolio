@@ -26,6 +26,7 @@
 
 # AI Agents
 .claude
+graft
 
 # debug
 npm-debug.log*
