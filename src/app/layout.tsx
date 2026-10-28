@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ThemeProvider from '@/components/theme-provider';
-import { combinedOSSDownloads } from '@/lib/data';
+import { combinedOSSDownloads, siteUrl } from '@/lib/data';
 import './globals.css';
 
 const geistSans = Geist({
@@ -14,16 +14,45 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const title = 'Nishant Kohli — Senior Full Stack Engineer';
+
 export const metadata: Metadata = {
-  title: 'Nishant Kohli — Senior Full Stack Engineer',
+  title,
   description:
-    `Portfolio of Nishant Kohli, Senior Full Stack Engineer specializing in React, Next.js, Node.js, TypeScript and AWS. Open-source maintainer of 3 npm packages with ${combinedOSSDownloads}+ downloads.`,
-  metadataBase: new URL('https://nishkohli96.vercel.app'),
+    `Nishant Kohli, Senior Full Stack Engineer in Noida, India. React, Next.js, Node.js, TypeScript & AWS. Maintainer of 3 npm packages, ${combinedOSSDownloads}+ downloads.`,
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: '/' },
+  authors: [{ name: 'Nishant Kohli', url: siteUrl }],
+  keywords: [
+    'Nishant Kohli',
+    'nish1896',
+    'nishkohli96',
+    'nishant.kohli',
+    'nocturnal_nish',
+    'Senior Full Stack Engineer',
+    'React',
+    'Next.js',
+    'Node.js',
+    'TypeScript',
+    'AWS',
+    'Python',
+    'FastAPI',
+    'portfolio',
+  ],
   openGraph: {
-    title: 'Nishant Kohli — Senior Full Stack Engineer',
+    title,
     description:
       `React, Next.js, Node.js & AWS engineer. Open-source maintainer with ${combinedOSSDownloads}+ npm downloads.`,
     type: 'website',
+    url: '/',
+    siteName: 'Nishant Kohli',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description:
+      `React, Next.js, Node.js & AWS engineer. Open-source maintainer with ${combinedOSSDownloads}+ npm downloads.`,
   },
 };
 
