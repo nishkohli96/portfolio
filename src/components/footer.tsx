@@ -4,21 +4,25 @@ import { profile } from '@/lib/data';
 
 const links = [
   {
+    name: 'Email',
     href: profile.social.email,
     label: 'nishantkohli96',
     icon: Mail
   },
   {
+    name: 'Linkedin',
     href: profile.social.linkedin,
     label: 'nishkohli96',
     icon: LinkedinIcon
   },
   {
+    name: 'Github',
     href: profile.social.github,
     label: 'nishkohli96',
     icon: GithubIcon
   },
   {
+    name: 'Instagram',
     href: profile.social.instagram,
     label: 'nocturnal_nish',
     icon: InstagramIcon
@@ -34,9 +38,9 @@ export default function Footer() {
         </h2>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {links.map(({ href, label, icon: Icon }) => (
+          {links.map(({ name, href, label, icon: Icon }) => (
             <a
-              key={label}
+              key={name}
               href={href}
               target={href.startsWith('mailto:') ? undefined : '_blank'}
               rel={href.startsWith('mailto:') ? undefined : 'noreferrer noopener'}

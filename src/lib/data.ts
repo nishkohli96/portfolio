@@ -108,12 +108,3 @@ export const projects = [
     github: 'https://github.com/nishkohli96/react-libs',
   },
 ];
-
-export const certifications = [
-  'Introduction to Model Context Protocol - Claude Academy (2026)',
-  'Claude 101 & Claude Code 101 - Claude Academy (2026)',
-  'SEO Foundations — LinkedIn (2023)',
-  'GraphQL Essential Training — LinkedIn (2023)',
-  'AWS Certified Solutions Architect Associate (2021)',
-  'Docker & Kubernetes: The Complete Guide (2021)',
-];

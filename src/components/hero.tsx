@@ -16,7 +16,7 @@ export default function Hero() {
           width={112}
           height={112}
           priority
-          className="mx-auto h-28 w-28 rounded-full object-cover ring-4 ring-surface"
+          className="mx-auto h-28 w-28 rounded-full object-cover object-top ring-4 ring-surface"
         />
         <h1 className="mt-6 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
           {profile.name}

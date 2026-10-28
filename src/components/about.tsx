@@ -1,5 +1,6 @@
 import Section from '@/components/section';
-import { profile, certifications } from '@/lib/data';
+import { certifications } from '@/lib/certifications';
+import { profile } from '@/lib/data';
 import { skills } from '@/lib/skills';
 
 export default function About() {
@@ -40,15 +41,32 @@ export default function About() {
         ))}
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-2">
-        {certifications.map(cert => (
-          <span
-            key={cert}
-            className="rounded-full bg-accent-soft px-3 py-1.5 text-xs font-medium text-accent"
-          >
-            {cert}
-          </span>
-        ))}
+      <div className="mt-5 rounded-2xl border border-surface-border bg-surface p-5">
+        <h3 className="text-sm font-semibold lg:text-base">
+          Certifications
+        </h3>
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+          {certifications.map(cert => (
+            <li
+              key={cert.name}
+              className="flex items-center gap-3 rounded-xl border border-surface-border bg-background px-4 py-3 lg:gap-4"
+            >
+              <cert.icon
+                className="h-6 w-6 shrink-0 lg:h-7 lg:w-7"
+                style={{ color: cert.color }}
+                aria-hidden
+              />
+              <div className="min-w-0">
+                <p className="text-sm font-medium lg:text-base">
+                  {cert.name}
+                </p>
+                <p className="text-xs text-muted lg:text-sm">
+                  {[cert.issuer, cert.year].filter(Boolean).join(' · ')}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </Section>
   );

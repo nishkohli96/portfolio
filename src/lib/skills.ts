@@ -6,6 +6,7 @@ import {
   SiDatocms,
   SiDocker,
   SiExpress,
+  SiFastapi,
   SiGithubactions,
   SiGraphql,
   SiMongodb,
@@ -17,6 +18,7 @@ import {
   SiNodedotjs,
   SiPostgresql,
   SiPrisma,
+  SiPydantic,
   SiPython,
   SiReact,
   SiReacthookform,
@@ -57,16 +59,16 @@ export const skills: Record<string, Skill[]> = {
       color: '#646CFF'
     },
     {
-      name: 'Redux',
-      url: 'https://redux.js.org',
-      icon: SiRedux,
-      color: '#764ABC'
-    },
-    {
       name: 'Material UI',
       url: 'https://mui.com',
       icon: SiMui,
       color: '#007FFF'
+    },
+    {
+      name: 'Redux',
+      url: 'https://redux.js.org',
+      icon: SiRedux,
+      color: '#764ABC'
     },
     {
       name: 'React Hook Form',
@@ -106,16 +108,28 @@ export const skills: Record<string, Skill[]> = {
       color: '#3178C6'
     },
     {
+      name: 'NestJS',
+      url: 'https://nestjs.com',
+      icon: SiNestjs,
+      color: '#E0234E'
+    },
+    {
       name: 'Python',
       url: 'https://www.python.org',
       icon: SiPython,
       color: '#3776AB'
     },
     {
-      name: 'NestJS',
-      url: 'https://nestjs.com',
-      icon: SiNestjs,
-      color: '#E0234E'
+      name: 'FastAPI',
+      url: 'https://fastapi.tiangolo.com',
+      icon: SiFastapi,
+      color: '#009688'
+    },
+    {
+      name: 'Pydantic',
+      url: 'https://docs.pydantic.dev',
+      icon: SiPydantic,
+      color: '#E92063'
     },
     {
       name: 'GraphQL',
@@ -145,16 +159,16 @@ export const skills: Record<string, Skill[]> = {
   // Near-black brands (Next.js, Express, Socket.io) omit color so they follow the theme text color.
   Cloud: [
     {
-      name: 'Docker',
-      url: 'https://www.docker.com',
-      icon: SiDocker,
-      color: '#2496ED'
-    },
-    {
       name: 'GitHub Actions',
       url: 'https://github.com/features/actions',
       icon: SiGithubactions,
       color: '#2088FF'
+    },
+    {
+      name: 'Docker',
+      url: 'https://www.docker.com',
+      icon: SiDocker,
+      color: '#2496ED'
     },
     {
       name: 'AWS S3',
