@@ -14,15 +14,15 @@ const iconByName: Record<string, ElementType> = {
 
 export default async function OpenSource() {
   const projects = await Promise.all(
-    openSource.map(async project => ({
-      ...project,
-      downloads: project.npm
-        ? await getMonthlyDownloads(packageNameFromUrl(project.npm))
-        : null,
-      stats: project.npm
-        ? null
-        : await getRepoStats(repoSlugFromUrl(project.github)),
-    })),
+    openSource.map(async project => {
+      const [downloads, stats] = await Promise.all([
+        project.npm
+          ? getMonthlyDownloads(packageNameFromUrl(project.npm))
+          : null,
+        getRepoStats(repoSlugFromUrl(project.github)),
+      ]);
+      return { ...project, downloads, stats };
+    }),
   );
 
   return (

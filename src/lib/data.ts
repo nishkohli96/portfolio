@@ -47,7 +47,15 @@ export const experience = [
   },
 ];
 
-export const openSource = [
+type OpenSourceProject = {
+  name: string;
+  description: string;
+  npm?: string;
+  github: string;
+  tags: string[];
+};
+
+export const openSource: OpenSourceProject[] = [
   {
     name: 'awesome-apps-and-skills',
     description:
