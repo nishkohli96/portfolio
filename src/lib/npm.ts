@@ -6,7 +6,10 @@ export async function getMonthlyDownloads(packageName: string): Promise<number |
   try {
     const res = await fetch(
       `https://api.npmjs.org/downloads/point/last-month/${encodeURIComponent(packageName)}`,
-      { next: { revalidate: 3600 } },
+      {
+        next: { revalidate: 3600 },
+        signal: AbortSignal.timeout(5000)
+      },
     );
     if (!res.ok) {
       return null;

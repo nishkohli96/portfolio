@@ -6,6 +6,7 @@ export async function getRepoStats(repoSlug: string): Promise<{ stars: number; f
   try {
     const res = await fetch(`https://api.github.com/repos/${repoSlug}`, {
       next: { revalidate: 3600 },
+      signal: AbortSignal.timeout(5000),
       headers: { Accept: 'application/vnd.github+json' },
     });
     if (!res.ok) {

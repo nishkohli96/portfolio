@@ -1,6 +1,6 @@
 export const siteUrl = 'https://nishkohli96.vercel.app';
 
-export const combinedOSSDownloads = String(29000).toLocaleString();
+export const combinedOSSDownloads = (29000).toLocaleString('en-US');
 
 export const profile = {
   name: 'Nishant Kohli',
