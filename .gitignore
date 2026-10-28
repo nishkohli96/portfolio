@@ -26,6 +26,7 @@
 
 # AI Agents
 .claude
+graft
 
 # debug
 npm-debug.log*
@@ -42,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Turborepo
+.turbo

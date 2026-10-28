@@ -4,7 +4,7 @@ import { profile } from '@/lib/data';
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-5 pb-16 pt-14 sm:pt-20">
+    <section id="top" className="relative overflow-hidden px-5 pb-8 pt-12 sm:pt-16">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/25 blur-[100px] dark:bg-accent/20"
@@ -16,7 +16,7 @@ export default function Hero() {
           width={112}
           height={112}
           priority
-          className="mx-auto h-28 w-28 rounded-full object-cover ring-4 ring-surface"
+          className="mx-auto h-28 w-28 rounded-full object-cover object-top ring-4 ring-surface"
         />
         <h1 className="mt-6 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
           {profile.name}

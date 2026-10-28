@@ -3,24 +3,44 @@ import { GithubIcon, InstagramIcon, LinkedinIcon } from '@/components/brand-icon
 import { profile } from '@/lib/data';
 
 const links = [
-  { href: profile.social.email, label: 'Email', icon: Mail },
-  { href: profile.social.linkedin, label: 'LinkedIn', icon: LinkedinIcon },
-  { href: profile.social.github, label: 'GitHub', icon: GithubIcon },
-  { href: profile.social.instagram, label: 'Instagram', icon: InstagramIcon },
+  {
+    name: 'Email',
+    href: profile.social.email,
+    label: 'nishantkohli96',
+    icon: Mail
+  },
+  {
+    name: 'Linkedin',
+    href: profile.social.linkedin,
+    label: 'nishkohli96',
+    icon: LinkedinIcon
+  },
+  {
+    name: 'Github',
+    href: profile.social.github,
+    label: 'nishkohli96',
+    icon: GithubIcon
+  },
+  {
+    name: 'Instagram',
+    href: profile.social.instagram,
+    label: 'nocturnal_nish',
+    icon: InstagramIcon
+  },
 ];
 
 export default function Footer() {
   return (
     <footer id="contact" className="border-t border-surface-border bg-surface">
-      <div className="mx-auto max-w-5xl px-5 py-14 text-center">
+      <div className="mx-auto max-w-5xl px-5 py-10 text-center">
         <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
           Let&apos;s build something.
         </h2>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {links.map(({ href, label, icon: Icon }) => (
+          {links.map(({ name, href, label, icon: Icon }) => (
             <a
-              key={label}
+              key={name}
               href={href}
               target={href.startsWith('mailto:') ? undefined : '_blank'}
               rel={href.startsWith('mailto:') ? undefined : 'noreferrer noopener'}

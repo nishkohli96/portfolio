@@ -1,3 +1,7 @@
+export const siteUrl = 'https://nishkohli96.vercel.app';
+
+export const combinedOSSDownloads = (29000).toLocaleString('en-US');
+
 export const profile = {
   name: 'Nishant Kohli',
   role: 'Senior Full Stack Engineer',
@@ -5,56 +9,15 @@ export const profile = {
   tagline:
     'Building scalable web apps across OTT, e-commerce & enterprise — with Next.js, Node.js and Typescript.',
   summary:
-    '7.5 years of experience shipping production web platforms for SonyLiv, Staples, and Maruti Suzuki. Led teams of up to 10 engineers, architected event-driven AWS systems, and maintain three open-source npm packages with 23,000+ combined downloads.',
+    `A FullStack Developer with 7.5 years of experience shipping production web platforms for SonyLiv, Staples, and Maruti Suzuki. Led teams of up to 10 engineers, architected event-driven AWS systems, and maintaining three open-source npm packages with ${combinedOSSDownloads}+ combined downloads.`,
   email: 'nishantkohli96@gmail.com',
-  phone: '+91-9814110843',
+  phone: '+91-7975751097',
   social: {
     github: 'https://github.com/nishkohli96',
     linkedin: 'https://www.linkedin.com/in/nishkohli96/',
     instagram: 'https://instagram.com/nocturnal_nish',
     email: 'mailto:nishantkohli96@gmail.com',
   },
-};
-
-export const skills = {
-  Frontend: [
-    { name: 'React.js', url: 'https://react.dev' },
-    { name: 'Next.js', url: 'https://nextjs.org' },
-    { name: 'Vite', url: 'https://vite.dev' },
-    { name: 'Redux', url: 'https://redux.js.org' },
-    { name: 'Material UI', url: 'https://mui.com' },
-    { name: 'React Hook Form', url: 'https://react-hook-form.com' },
-    { name: 'Tailwind CSS', url: 'https://tailwindcss.com' },
-    { name: 'Storybook', url: 'https://storybook.js.org' },
-  ],
-  Backend: [
-    { name: 'Node.js', url: 'https://nodejs.org' },
-    { name: 'Express.js', url: 'https://expressjs.com' },
-    { name: 'TypeScript', url: 'https://www.typescriptlang.org' },
-    { name: 'NestJS', url: 'https://nestjs.com' },
-    { name: 'GraphQL', url: 'https://graphql.org' },
-    { name: 'Algolia', url: 'https://www.algolia.com' },
-    { name: 'Socket.io', url: 'https://socket.io' },
-    { name: 'Redis', url: 'https://redis.io' },
-  ],
-  Cloud: [
-    { name: 'AWS S3', url: 'https://aws.amazon.com/s3/' },
-    { name: 'AWS SES', url: 'https://aws.amazon.com/ses/' },
-    { name: 'AWS SNS', url: 'https://aws.amazon.com/sns/' },
-    { name: 'AWS SQS', url: 'https://aws.amazon.com/sqs/' },
-    { name: 'AWS Lambda', url: 'https://aws.amazon.com/lambda/' },
-    { name: 'Docker', url: 'https://www.docker.com' },
-    { name: 'GitHub Actions', url: 'https://github.com/features/actions' },
-  ],
-  DataBase: [
-    { name: 'MongoDB', url: 'https://www.mongodb.com' },
-    { name: 'MySQL', url: 'https://www.mysql.com' },
-    { name: 'PostgreSQL', url: 'https://www.postgresql.org' },
-    { name: 'Mongoose', url: 'https://mongoosejs.com' },
-    { name: 'Sequelize', url: 'https://sequelize.org' },
-    { name: 'Contentful', url: 'https://www.contentful.com' },
-    { name: 'DatoCMS', url: 'https://www.datocms.com' },
-  ],
 };
 
 export const experience = [
@@ -84,7 +47,29 @@ export const experience = [
   },
 ];
 
-export const openSource = [
+type OpenSourceProject = {
+  name: string;
+  description: string;
+  npm?: string;
+  github: string;
+  tags: string[];
+};
+
+export const openSource: OpenSourceProject[] = [
+  {
+    name: 'awesome-apps-and-skills',
+    description:
+      'Curated apps, web tools, libraries, Claude skills and MCP servers, grouped by what you want to do — for developers, designers and marketers.',
+    github: 'https://github.com/nishkohli96/awesome-apps-and-skills',
+    tags: ['Awesome List', 'Claude', 'MCP', 'Productivity'],
+  },
+  {
+    name: 'reminder-desk',
+    description:
+      'Claude plugin and skill for daily to-do reminders — push notifications at the start of day, each task\'s time, a follow-up and end of day, until you tick it off.',
+    github: 'https://github.com/nishkohli96/reminder-desk',
+    tags: ['Claude Plugin', 'Push Notifications', 'Productivity'],
+  },
   {
     name: 'rhf-mui-components',
     description:
@@ -132,11 +117,4 @@ export const projects = [
     description: 'A collection of demos of various libraries in React.',
     github: 'https://github.com/nishkohli96/react-libs',
   },
-];
-
-export const certifications = [
-  'SEO Foundations — LinkedIn (2023)',
-  'GraphQL Essential Training — LinkedIn (2023)',
-  'AWS Certified Solutions Architect Associate (2021)',
-  'Docker & Kubernetes: The Complete Guide (2021)',
 ];

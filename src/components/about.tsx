@@ -1,5 +1,7 @@
 import Section from '@/components/section';
-import { profile, skills, certifications } from '@/lib/data';
+import { certifications } from '@/lib/certifications';
+import { profile } from '@/lib/data';
+import { skills } from '@/lib/skills';
 
 export default function About() {
   return (
@@ -8,24 +10,29 @@ export default function About() {
         {profile.summary}
       </p>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 flex flex-col gap-5">
         {Object.entries(skills).map(([category, items]) => (
           <div
             key={category}
             className="rounded-2xl border border-surface-border bg-surface p-5"
           >
-            <h3 className="text-sm font-semibold">
+            <h3 className="text-sm font-semibold lg:text-base">
               {category}
             </h3>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-3">
               {items.map(item => (
                 <a
                   key={item.name}
                   href={item.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="rounded-full border border-surface-border bg-background px-2.5 py-1 text-xs text-muted transition hover:border-accent hover:text-accent"
+                  className="inline-flex items-center gap-2.5 rounded-full border border-surface-border bg-background px-4 py-2 text-sm text-muted transition hover:border-accent hover:text-accent lg:gap-3 lg:px-5 lg:py-2.5 lg:text-base"
                 >
+                  <item.icon
+                    className="h-6 w-6 shrink-0 lg:h-7 lg:w-7"
+                    style={item.color ? { color: item.color } : undefined}
+                    aria-hidden
+                  />
                   {item.name}
                 </a>
               ))}
@@ -34,15 +41,32 @@ export default function About() {
         ))}
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-2">
-        {certifications.map(cert => (
-          <span
-            key={cert}
-            className="rounded-full bg-accent-soft px-3 py-1.5 text-xs font-medium text-accent"
-          >
-            {cert}
-          </span>
-        ))}
+      <div className="mt-5 rounded-2xl border border-surface-border bg-surface p-5">
+        <h3 className="text-sm font-semibold lg:text-base">
+          Certifications
+        </h3>
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+          {certifications.map(cert => (
+            <li
+              key={cert.name}
+              className="flex items-center gap-3 rounded-xl border border-surface-border bg-background px-4 py-3 lg:gap-4"
+            >
+              <cert.icon
+                className="h-6 w-6 shrink-0 lg:h-7 lg:w-7"
+                style={{ color: cert.color }}
+                aria-hidden
+              />
+              <div className="min-w-0">
+                <p className="text-sm font-medium lg:text-base">
+                  {cert.name}
+                </p>
+                <p className="text-xs text-muted lg:text-sm">
+                  {[cert.issuer, cert.year].filter(Boolean).join(' · ')}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </Section>
   );
