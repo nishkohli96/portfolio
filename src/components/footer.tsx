@@ -29,6 +29,8 @@ const links = [
   },
 ];
 
+const currentYear = new Date().getFullYear();
+
 export default function Footer() {
   return (
     <footer id="contact" className="border-t border-surface-border bg-surface">
@@ -55,7 +57,7 @@ export default function Footer() {
         <p className="mt-10 text-xs text-muted">
           ©
           {' '}
-          {new Date().getFullYear()}
+          {currentYear}
           {' '}
           {profile.name}
         </p>

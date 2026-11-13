@@ -10,8 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
+    "lint": "oxlint --fix"
   },
   "dependencies": {
     "lucide-react": "^1.31.0",
@@ -29,6 +28,9 @@
     "oxlint": "^1.93.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm run lint"
   },
   "packageManager": "pnpm@11.20.0"
 }
