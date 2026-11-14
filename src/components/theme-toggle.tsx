@@ -2,16 +2,21 @@
 
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- standard next-themes SSR-safe mount check
-    setMounted(true);
-  }, []);
+  
+  /**
+   * useSyncExternalStore is React’s hook for reading a value
+   * that lives outside React, such as window.matchMedia, a
+   * browser API or a store like Redux.
+   */
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   return (
     <button

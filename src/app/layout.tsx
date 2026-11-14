@@ -56,7 +56,6 @@ export const metadata: Metadata = {
   },
 };
 
-// eslint-disable-next-line no-undef -- LayoutProps is a Next.js ambient global type, not an import
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html
