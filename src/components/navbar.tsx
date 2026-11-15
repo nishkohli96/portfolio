@@ -19,7 +19,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-surface-border bg-background/80 backdrop-blur">
       <nav className="flex items-center justify-between px-6 py-4 sm:px-10 lg:px-16 xl:px-24">
-        <a href="#top" className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight">
+        <a
+          href="#top"
+          className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight"
+        >
           <Image
             src="/nk-logo.svg"
             alt="NK logo"

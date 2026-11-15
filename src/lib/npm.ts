@@ -9,7 +9,7 @@ export async function getMonthlyDownloads(packageName: string): Promise<number |
       {
         next: { revalidate: 3600 },
         signal: AbortSignal.timeout(5000)
-      },
+      }
     );
     if (!res.ok) {
       return null;

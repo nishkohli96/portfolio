@@ -2,9 +2,11 @@ import type { MetadataRoute } from 'next';
 import { siteUrl } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{
-    url: siteUrl,
-    lastModified: new Date(),
-    priority: 1
-  }];
+  return [
+    {
+      url: siteUrl,
+      lastModified: new Date(),
+      priority: 1,
+    },
+  ];
 }

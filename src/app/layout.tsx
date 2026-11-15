@@ -18,8 +18,7 @@ const title = 'Nishant Kohli — Senior Full Stack Engineer';
 
 export const metadata: Metadata = {
   title,
-  description:
-    `Nishant Kohli, Senior Full Stack Engineer in Noida, India. React, Next.js, Node.js, TypeScript & AWS. Maintainer of 3 npm packages, ${combinedOSSDownloads}+ downloads.`,
+  description: `Nishant Kohli, Senior Full Stack Engineer in Noida, India. React, Next.js, Node.js, TypeScript & AWS. Maintainer of 3 npm packages, ${combinedOSSDownloads}+ downloads.`,
   metadataBase: new URL(siteUrl),
   alternates: { canonical: '/' },
   authors: [{ name: 'Nishant Kohli', url: siteUrl }],
@@ -41,8 +40,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title,
-    description:
-      `React, Next.js, Node.js & AWS engineer. Open-source maintainer with ${combinedOSSDownloads}+ npm downloads.`,
+    description: `React, Next.js, Node.js & AWS engineer. Open-source maintainer with ${combinedOSSDownloads}+ npm downloads.`,
     type: 'website',
     url: '/',
     siteName: 'Nishant Kohli',
@@ -51,8 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title,
-    description:
-      `React, Next.js, Node.js & AWS engineer. Open-source maintainer with ${combinedOSSDownloads}+ npm downloads.`,
+    description: `React, Next.js, Node.js & AWS engineer. Open-source maintainer with ${combinedOSSDownloads}+ npm downloads.`,
   },
 };
 

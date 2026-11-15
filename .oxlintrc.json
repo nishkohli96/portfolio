@@ -8,7 +8,7 @@
     "react-perf",
     "nextjs",
     "oxc",
-    "jsx-a11y",
+    "jsx-a11y"
   ],
   "categories": {
     "correctness": "error"

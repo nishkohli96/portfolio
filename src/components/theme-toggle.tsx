@@ -6,7 +6,7 @@ import { useSyncExternalStore } from 'react';
 
 export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  
+
   /**
    * useSyncExternalStore is React’s hook for reading a value
    * that lives outside React, such as window.matchMedia, a
@@ -15,7 +15,7 @@ export default function ThemeToggle() {
   const mounted = useSyncExternalStore(
     () => () => {},
     () => true,
-    () => false,
+    () => false
   );
 
   return (

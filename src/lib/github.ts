@@ -2,7 +2,9 @@ export function repoSlugFromUrl(githubUrl: string) {
   return new URL(githubUrl).pathname.replace(/^\//, '');
 }
 
-export async function getRepoStats(repoSlug: string): Promise<{ stars: number; forks: number } | null> {
+export async function getRepoStats(
+  repoSlug: string
+): Promise<{ stars: number; forks: number } | null> {
   try {
     const res = await fetch(`https://api.github.com/repos/${repoSlug}`, {
       next: { revalidate: 3600 },
