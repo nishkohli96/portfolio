@@ -1,6 +1,7 @@
 import { Bell, HardDrive, Inbox, Mail, Zap } from 'lucide-react';
 import {
   SiAlgolia,
+  SiBaseui,
   SiContentful,
   SiDatocms,
   SiDocker,
@@ -24,6 +25,7 @@ import {
   SiRedis,
   SiRedux,
   SiSequelize,
+  SiShadcnui,
   SiSocketdotio,
   SiStorybook,
   SiTailwindcss,
@@ -59,6 +61,16 @@ export const skillGroups: readonly SkillGroup[] = [
         url: 'https://mui.com',
         icon: SiMui,
         color: '#007FFF',
+      },
+      {
+        name: 'Base UI',
+        url: 'https://base-ui.com',
+        icon: SiBaseui,
+      },
+      {
+        name: 'shadcn/ui',
+        url: 'https://ui.shadcn.com',
+        icon: SiShadcnui,
       },
       {
         name: 'Redux',
