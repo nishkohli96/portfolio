@@ -33,7 +33,7 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-surface-border bg-surface">
+    <footer id="contact" className="border-surface-border bg-surface border-t">
       <div className="mx-auto max-w-5xl px-5 py-10 text-center">
         <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
           Let&apos;s build something.
@@ -46,7 +46,7 @@ export default function Footer() {
               href={href}
               target={href.startsWith('mailto:') ? undefined : '_blank'}
               rel={href.startsWith('mailto:') ? undefined : 'noreferrer noopener'}
-              className="inline-flex items-center gap-2 rounded-full border border-surface-border bg-background px-4 py-2 text-sm font-medium transition hover:border-accent hover:text-accent"
+              className="border-surface-border bg-background hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition"
             >
               <Icon className="h-4 w-4" />
               {label}
@@ -54,12 +54,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="mt-10 text-xs text-muted">
-          ©
-          {' '}
-          {currentYear}
-          {' '}
-          {profile.name}
+        <p className="text-muted mt-10 text-xs">
+          © {currentYear} {profile.name}
         </p>
       </div>
     </footer>

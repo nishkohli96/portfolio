@@ -8,7 +8,7 @@ export default function Experience() {
         {experience.map(job => (
           <li
             key={job.company + job.period}
-            className="relative rounded-2xl border border-surface-border bg-surface p-6"
+            className="border-surface-border bg-surface relative rounded-2xl border p-6"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-base font-semibold sm:text-lg">
@@ -18,17 +18,20 @@ export default function Experience() {
                   {job.company}
                 </span>
               </h3>
-              <span className="text-xs font-medium text-muted">
+              <span className="text-muted text-xs font-medium">
                 {job.period}
               </span>
             </div>
-            <p className="mt-1 text-xs text-muted">
+            <p className="text-muted mt-1 text-xs">
               {job.location}
             </p>
             <ul className="mt-4 space-y-2">
               {job.points.map(point => (
-                <li key={point} className="flex gap-2 text-sm leading-relaxed text-muted">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                <li
+                  key={point}
+                  className="text-muted flex gap-2 text-sm leading-relaxed"
+                >
+                  <span className="bg-accent mt-2 h-1 w-1 shrink-0 rounded-full" />
                   {point}
                 </li>
               ))}

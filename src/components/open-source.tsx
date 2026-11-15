@@ -22,7 +22,7 @@ export default async function OpenSource() {
         getRepoStats(repoSlugFromUrl(project.github)),
       ]);
       return { ...project, downloads, stats };
-    }),
+    })
   );
 
   return (
@@ -31,7 +31,7 @@ export default async function OpenSource() {
       eyebrow="Work samples"
       title="Open source"
     >
-      <p className="max-w-2xl text-sm text-muted sm:text-base">
+      <p className="text-muted max-w-2xl text-sm sm:text-base">
         Three npm packages, plus curated lists and Claude tooling on GitHub.
       </p>
 
@@ -41,53 +41,51 @@ export default async function OpenSource() {
           return (
             <div
               key={project.name}
-              className="flex flex-col rounded-2xl border border-surface-border bg-surface p-6"
+              className="border-surface-border bg-surface flex flex-col rounded-2xl border p-6"
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-mono text-sm font-semibold">
                   {project.npm && '@nish1896/'}
                   {project.name}
                 </h3>
-                <Icon className="h-4 w-4 text-accent" />
+                <Icon className="text-accent h-4 w-4" />
               </div>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+              <p className="text-muted mt-3 flex-1 text-sm leading-relaxed">
                 {project.description}
               </p>
               {project.downloads !== null && (
-                <p className="mt-4 text-xs font-medium text-accent">
-                  {project.downloads.toLocaleString()}
-                  {' '}
-                  downloads / month
+                <p className="text-accent mt-4 text-xs font-medium">
+                  {`${project.downloads.toLocaleString()} downloads / month`}
                 </p>
               )}
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {project.tags.map(tag => (
                   <span
                     key={tag}
-                    className="rounded-full border border-surface-border px-2 py-0.5 text-[11px] text-muted"
+                    className="border-surface-border text-muted rounded-full border px-2 py-0.5 text-[11px]"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <div className="mt-5 flex gap-3 border-t border-surface-border pt-4 text-sm">
+              <div className="border-surface-border mt-5 flex gap-3 border-t pt-4 text-sm">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex items-center gap-1.5 font-medium text-muted hover:text-foreground"
+                  className="text-muted hover:text-foreground inline-flex items-center gap-1.5 font-medium"
                 >
                   <GithubIcon className="h-3.5 w-3.5" />
                   Source
                 </a>
                 {project.stats && project.stats.stars > 0 && (
-                  <span className="inline-flex items-center gap-1 text-xs text-muted">
+                  <span className="text-muted inline-flex items-center gap-1 text-xs">
                     <Star className="h-3.5 w-3.5" />
                     {project.stats.stars}
                   </span>
                 )}
                 {project.stats && project.stats.forks > 0 && (
-                  <span className="inline-flex items-center gap-1 text-xs text-muted">
+                  <span className="text-muted inline-flex items-center gap-1 text-xs">
                     <GitFork className="h-3.5 w-3.5" />
                     {project.stats.forks}
                   </span>
@@ -97,7 +95,7 @@ export default async function OpenSource() {
                     href={project.npm}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline"
+                    className="text-accent inline-flex items-center gap-1.5 font-medium hover:underline"
                   >
                     npm
                   </a>

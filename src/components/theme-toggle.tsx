@@ -23,7 +23,7 @@ export default function ThemeToggle() {
       type="button"
       aria-label="Toggle theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-surface-border bg-surface text-foreground transition hover:border-accent hover:text-accent"
+      className="border-surface-border bg-surface text-foreground hover:border-accent hover:text-accent inline-flex h-9 w-9 items-center justify-center rounded-full border transition"
     >
       {mounted && resolvedTheme === 'dark'
         ? (

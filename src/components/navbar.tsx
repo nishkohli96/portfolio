@@ -17,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-surface-border bg-background/80 backdrop-blur">
+    <header className="border-surface-border bg-background/80 sticky top-0 z-50 border-b backdrop-blur">
       <nav className="flex items-center justify-between px-6 py-4 sm:px-10 lg:px-16 xl:px-24">
         <a
           href="#top"
@@ -38,7 +38,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted transition hover:text-foreground"
+              className="text-muted hover:text-foreground text-sm transition"
             >
               {link.label}
             </a>
@@ -52,7 +52,7 @@ export default function Navbar() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen(v => !v)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-surface-border"
+            className="border-surface-border inline-flex h-9 w-9 items-center justify-center rounded-full border"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -60,14 +60,14 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="absolute inset-x-0 top-full border-t border-surface-border bg-background md:hidden">
+        <div className="border-surface-border bg-background absolute inset-x-0 top-full border-t md:hidden">
           <div className="flex flex-col gap-1 px-5 py-3">
             {links.map(link => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-2.5 text-sm text-muted transition hover:bg-surface hover:text-foreground"
+                className="text-muted hover:bg-surface hover:text-foreground rounded-md px-2 py-2.5 text-sm transition"
               >
                 {link.label}
               </a>

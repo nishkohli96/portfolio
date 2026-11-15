@@ -6,7 +6,7 @@ import { skills } from '@/lib/skills';
 export default function About() {
   return (
     <Section id="about" eyebrow="About" title="Who I am">
-      <p className="max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+      <p className="text-muted max-w-3xl text-base leading-relaxed sm:text-lg">
         {profile.summary}
       </p>
 
@@ -14,7 +14,7 @@ export default function About() {
         {Object.entries(skills).map(([category, items]) => (
           <div
             key={category}
-            className="rounded-2xl border border-surface-border bg-surface p-5"
+            className="border-surface-border bg-surface rounded-2xl border p-5"
           >
             <h3 className="text-sm font-semibold lg:text-base">
               {category}
@@ -26,7 +26,7 @@ export default function About() {
                   href={item.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex items-center gap-2.5 rounded-full border border-surface-border bg-background px-4 py-2 text-sm text-muted transition hover:border-accent hover:text-accent lg:gap-3 lg:px-5 lg:py-2.5 lg:text-base"
+                  className="border-surface-border bg-background text-muted hover:border-accent hover:text-accent inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm transition lg:gap-3 lg:px-5 lg:py-2.5 lg:text-base"
                 >
                   <item.icon
                     className="h-6 w-6 shrink-0 lg:h-7 lg:w-7"
@@ -41,7 +41,7 @@ export default function About() {
         ))}
       </div>
 
-      <div className="mt-5 rounded-2xl border border-surface-border bg-surface p-5">
+      <div className="border-surface-border bg-surface mt-5 rounded-2xl border p-5">
         <h3 className="text-sm font-semibold lg:text-base">
           Certifications
         </h3>
@@ -49,7 +49,7 @@ export default function About() {
           {certifications.map(cert => (
             <li
               key={cert.name}
-              className="flex items-center gap-3 rounded-xl border border-surface-border bg-background px-4 py-3 lg:gap-4"
+              className="border-surface-border bg-background flex items-center gap-3 rounded-xl border px-4 py-3 lg:gap-4"
             >
               <cert.icon
                 className="h-6 w-6 shrink-0 lg:h-7 lg:w-7"
@@ -60,7 +60,7 @@ export default function About() {
                 <p className="text-sm font-medium lg:text-base">
                   {cert.name}
                 </p>
-                <p className="text-xs text-muted lg:text-sm">
+                <p className="text-muted text-xs lg:text-sm">
                   {[cert.issuer, cert.year].filter(Boolean).join(' · ')}
                 </p>
               </div>
