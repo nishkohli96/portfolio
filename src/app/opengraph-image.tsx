@@ -20,8 +20,12 @@ export default function OpengraphImage() {
       }}
     >
       <div style={{ fontSize: 28, color: '#56aee8', letterSpacing: 4 }}>PORTFOLIO</div>
-      <div style={{ fontSize: 88, fontWeight: 700, marginTop: 16 }}>{profile.name}</div>
-      <div style={{ fontSize: 44, color: '#56aee8', marginTop: 12 }}>{profile.role}</div>
+      <div style={{ fontSize: 88, fontWeight: 700, marginTop: 16 }}>
+        {profile.name}
+      </div>
+      <div style={{ fontSize: 44, color: '#56aee8', marginTop: 12 }}>
+        {profile.role}
+      </div>
       <div style={{ fontSize: 30, color: '#9aa4b2', marginTop: 32 }}>
         React · Next.js · Node.js · TypeScript · AWS
       </div>

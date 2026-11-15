@@ -55,7 +55,11 @@ export default function Footer() {
         </div>
 
         <p className="text-muted mt-10 text-xs">
-          © {currentYear} {profile.name}
+          ©
+          {' '}
+          {currentYear}
+          {' '}
+          {profile.name}
         </p>
       </div>
     </footer>
