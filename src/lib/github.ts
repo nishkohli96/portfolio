@@ -1,25 +1,22 @@
-export function repoSlugFromUrl(githubUrl: string) {
-  return new URL(githubUrl).pathname.replace(/^\//, '');
-}
+import { z } from 'zod';
+import { DATA_REVALIDATE_SECONDS } from '@/constants';
+import type { RepoStats, Result } from '@/types';
+import { fetchJson } from './http';
+import { toResult } from './result';
 
-export async function getRepoStats(
-  repoSlug: string
-): Promise<{ stars: number; forks: number } | null> {
-  try {
-    const res = await fetch(`https://api.github.com/repos/${repoSlug}`, {
-      next: { revalidate: 3600 },
-      signal: AbortSignal.timeout(5000),
+const repoSchema = z
+  .object({ stargazers_count: z.number(), forks_count: z.number() })
+  .transform(({ stargazers_count, forks_count }): RepoStats => ({
+    stars: stargazers_count,
+    forks: forks_count,
+  }));
+
+export function getRepoStats(repoSlug: string): Promise<Result<RepoStats>> {
+  return toResult(
+    fetchJson(`https://api.github.com/repos/${repoSlug}`, repoSchema, {
       headers: { Accept: 'application/vnd.github+json' },
-    });
-    if (!res.ok) {
-      return null;
-    }
-    const data = await res.json();
-    return {
-      stars: typeof data.stargazers_count === 'number' ? data.stargazers_count : 0,
-      forks: typeof data.forks_count === 'number' ? data.forks_count : 0,
-    };
-  } catch {
-    return null;
-  }
+      revalidate: DATA_REVALIDATE_SECONDS,
+    }),
+    `github:${repoSlug}`
+  );
 }

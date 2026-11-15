@@ -8,6 +8,7 @@
   "trailingComma": "es5",
   "arrowParens": "avoid",
   "experimentalOperatorPosition": "start",
+  "singleAttributePerLine": true,
   "sortTailwindcss": true,
   "sortPackageJson": true,
   "insertFinalNewline": true,

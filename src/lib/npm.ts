@@ -1,22 +1,20 @@
-export function packageNameFromUrl(npmUrl: string) {
-  return new URL(npmUrl).pathname.replace(/^\/package\//, '');
-}
+import { z } from 'zod';
+import { DATA_REVALIDATE_SECONDS } from '@/constants';
+import type { Result } from '@/types';
+import { fetchJson } from './http';
+import { toResult } from './result';
 
-export async function getMonthlyDownloads(packageName: string): Promise<number | null> {
-  try {
-    const res = await fetch(
+const downloadsSchema = z
+  .object({ downloads: z.number() })
+  .transform(({ downloads }) => downloads);
+
+export function getMonthlyDownloads(packageName: string): Promise<Result<number>> {
+  return toResult(
+    fetchJson(
       `https://api.npmjs.org/downloads/point/last-month/${encodeURIComponent(packageName)}`,
-      {
-        next: { revalidate: 3600 },
-        signal: AbortSignal.timeout(5000)
-      }
-    );
-    if (!res.ok) {
-      return null;
-    }
-    const data = await res.json();
-    return typeof data.downloads === 'number' ? data.downloads : null;
-  } catch {
-    return null;
-  }
+      downloadsSchema,
+      { revalidate: DATA_REVALIDATE_SECONDS }
+    ),
+    `npm:${packageName}`
+  );
 }

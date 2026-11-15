@@ -1,10 +1,13 @@
 import { ArrowUpRight, Mail } from 'lucide-react';
 import Image from 'next/image';
-import { profile } from '@/lib/data';
+import { profile } from '@/constants';
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-5 pt-12 pb-8 sm:pt-16">
+    <section
+      id="top"
+      className="relative overflow-hidden px-5 pt-12 pb-8 sm:pt-16"
+    >
       <div
         aria-hidden
         className="bg-accent/25 dark:bg-accent/20 pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full blur-[100px]"
@@ -32,7 +35,10 @@ export default function Hero() {
             href={profile.social.email}
             className="bg-accent inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
           >
-            <Mail className="h-4 w-4" />
+            <Mail
+              className="h-4 w-4"
+              aria-hidden
+            />
             Get in touch
           </a>
           <a
@@ -40,7 +46,10 @@ export default function Hero() {
             className="border-surface-border hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition"
           >
             View work
-            <ArrowUpRight className="h-4 w-4" />
+            <ArrowUpRight
+              className="h-4 w-4"
+              aria-hidden
+            />
           </a>
         </div>
       </div>

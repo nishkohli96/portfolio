@@ -1,12 +1,12 @@
 import type { MetadataRoute } from 'next';
-import { siteUrl } from '@/lib/data';
+import { SITE_URL } from '@/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: siteUrl,
+      url: SITE_URL,
       lastModified: new Date(),
-      priority: 1,
-    },
+      priority: 1
+    }
   ];
 }
