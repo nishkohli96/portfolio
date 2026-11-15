@@ -1,5 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "jsPlugins": ["@stylistic/eslint-plugin"],
   "plugins": [
     "eslint",
     "typescript",
@@ -13,7 +14,51 @@
   "categories": {
     "correctness": "error"
   },
-  "rules": {},
+  "rules": {
+    "@stylistic/arrow-parens": ["warn", "as-needed"],
+    "@stylistic/brace-style": "warn",
+    "@stylistic/indent": ["warn", 2, { "SwitchCase": 1 }],
+    "@stylistic/indent-binary-ops": ["warn", 2],
+    "@stylistic/jsx-closing-bracket-location": "warn",
+    "@stylistic/jsx-curly-newline": ["warn", "consistent"],
+    "@stylistic/jsx-curly-spacing": "warn",
+    "@stylistic/jsx-equals-spacing": "warn",
+    "@stylistic/jsx-indent-props": ["warn", 2],
+    "@stylistic/jsx-one-expression-per-line": ["warn", { "allow": "literal" }],
+    "@stylistic/jsx-pascal-case": "warn",
+    "@stylistic/jsx-quotes": ["warn", "prefer-double"],
+    "@stylistic/jsx-self-closing-comp": "warn",
+    "@stylistic/jsx-wrap-multilines": [
+      "warn",
+      {
+        "arrow": "parens-new-line",
+        "assignment": "parens-new-line",
+        "condition": "parens-new-line",
+        "declaration": "parens-new-line",
+        "logical": "parens-new-line",
+        "return": "parens-new-line"
+      }
+    ],
+    "@stylistic/member-delimiter-style": "warn",
+    "@stylistic/multiline-ternary": ["warn", "always-multiline"],
+    "@stylistic/no-multi-spaces": "warn",
+    "@stylistic/no-multiple-empty-lines": "warn",
+    "@stylistic/no-trailing-spaces": "warn",
+    "@stylistic/operator-linebreak": ["warn", "before"],
+    "@stylistic/type-annotation-spacing": "warn",
+    "curly": "warn",
+    "eqeqeq": "error",
+    "no-nested-ternary": "warn",
+    "no-plusplus": "warn",
+    "no-var": "warn",
+    "object-shorthand": "warn",
+    "prefer-const": "warn",
+    "prefer-template": "warn",
+    "typescript/array-type": "warn",
+    "typescript/consistent-type-exports": "warn",
+    "typescript/consistent-type-imports": "warn",
+    "typescript/no-explicit-any": "warn"
+  },
   "env": {
     "builtin": true,
     "es6": true
