@@ -8,5 +8,7 @@
   "trailingComma": "es5",
   "sortTailwindcss": true,
   "sortPackageJson": true,
+  "insertFinalNewline": true,
+  "overrides": [],
   "ignorePatterns": []
 }
