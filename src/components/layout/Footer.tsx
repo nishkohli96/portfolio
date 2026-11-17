@@ -3,6 +3,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import ExternalLink from '@/components/ExternalLink';
 import { profile } from '@/constants';
 import type { IconComponent } from '@/types';
+import { getCurrentYear } from '@/utils';
 
 interface ContactLink {
   name: string;
@@ -38,8 +39,6 @@ const CONTACT_LINKS: readonly ContactLink[] = [
   }
 ];
 
-const CURRENT_YEAR = new Date().getFullYear();
-
 export default function Footer() {
   return (
     <footer
@@ -69,7 +68,7 @@ export default function Footer() {
         </div>
 
         <p className="text-muted mt-10 text-xs">
-          {`© ${CURRENT_YEAR} ${profile.name}`}
+          {`© ${getCurrentYear()} ${profile.name}`}
         </p>
       </div>
     </footer>

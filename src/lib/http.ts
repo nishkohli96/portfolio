@@ -3,6 +3,10 @@ import { AppError } from './errors';
 
 const DEFAULT_TIMEOUT_MS = 5000;
 
+function isTimeoutError(cause: unknown): boolean {
+  return cause instanceof DOMException && cause.name === 'TimeoutError';
+}
+
 export interface FetchJsonOptions {
   headers?: HeadersInit;
   /** Next.js data-cache revalidation window, in seconds. */
@@ -31,12 +35,9 @@ export async function fetchJson<S extends z.ZodType>(
   try {
     response = await fetch(url, init);
   } catch (cause) {
-    const isTimeout = cause instanceof DOMException && cause.name === 'TimeoutError';
-    throw new AppError(
-      isTimeout ? 'TIMEOUT' : 'NETWORK_ERROR',
-      isTimeout ? `Request to ${url} timed out after ${timeoutMs}ms` : `Request to ${url} failed`,
-      { cause }
-    );
+    throw isTimeoutError(cause)
+      ? new AppError('TIMEOUT', `Request to ${url} timed out after ${timeoutMs}ms`, { cause })
+      : new AppError('NETWORK_ERROR', `Request to ${url} failed`, { cause });
   }
 
   if (!response.ok) {
@@ -47,7 +48,10 @@ export async function fetchJson<S extends z.ZodType>(
   try {
     body = await response.json();
   } catch (cause) {
-    throw new AppError('INVALID_RESPONSE', `Response from ${url} is not valid JSON`, { cause });
+    // The timeout signal also covers reading the body, so it can fire here too.
+    throw isTimeoutError(cause)
+      ? new AppError('TIMEOUT', `Reading ${url} timed out after ${timeoutMs}ms`, { cause })
+      : new AppError('INVALID_RESPONSE', `Response from ${url} is not valid JSON`, { cause });
   }
 
   const parsed = schema.safeParse(body);

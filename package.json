@@ -10,9 +10,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint --fix && oxlint --fix && oxlint --fix",
+    "lint": "oxlint --deny-warnings || (oxlint --fix && oxlint --fix && oxlint --fix && oxlint --deny-warnings)",
     "fmt": "oxfmt && pnpm run lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "lucide-react": "^1.31.0",
