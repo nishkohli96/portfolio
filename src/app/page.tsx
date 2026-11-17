@@ -1,35 +1,22 @@
 import {
-  Navbar,
-  Hero,
   About,
   Experience,
+  Footer,
+  Hero,
   OpenSource,
-  Projects,
-  Footer
+  Projects
 } from '@/components';
-import { profile, siteUrl } from '@/lib/data';
+import Navbar from '@/components/layout/Navbar';
+import { buildPersonJsonLd } from '@/lib';
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: profile.name,
-  jobTitle: profile.role,
-  url: siteUrl,
-  image: `${siteUrl}/Nish_pic.jpg`,
-  email: profile.email,
-  address: { '@type': 'PostalAddress', addressLocality: 'Noida', addressCountry: 'IN' },
-  sameAs: [profile.social.github, profile.social.linkedin, profile.social.instagram],
-  knowsAbout: ['React', 'Next.js', 'Node.js', 'TypeScript', 'AWS', 'Python', 'FastAPI'],
-};
+const personJsonLd = JSON.stringify(buildPersonJsonLd()).replace(/</g, '\\u003c');
 
 export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
-        }}
+        dangerouslySetInnerHTML={{ __html: personJsonLd }}
       />
       <Navbar />
       <main className="flex-1">

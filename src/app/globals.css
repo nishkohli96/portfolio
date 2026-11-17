@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -42,6 +42,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keep anchored sections clear of the sticky header (~68px). */
+  scroll-padding-top: 5rem;
 }
 
 body {

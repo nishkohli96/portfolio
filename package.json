@@ -1,6 +1,6 @@
 {
   "name": "@nish1896/portfolio",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -10,26 +10,34 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix ."
+    "lint": "oxlint --deny-warnings || (oxlint --fix && oxlint --fix && oxlint --fix && oxlint --deny-warnings)",
+    "fmt": "oxfmt && pnpm run lint"
   },
   "dependencies": {
-    "@nish1896/eslint-flat-config": "^3.1.6",
     "lucide-react": "^1.31.0",
     "next": "16.3.1",
     "next-themes": "^0.4.6",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "react-icons": "^5.7.0"
+    "react-icons": "^5.7.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^6.0.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.3.1",
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm run lint"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   },
   "packageManager": "pnpm@11.20.0"
 }

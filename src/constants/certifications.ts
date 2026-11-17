@@ -1,17 +1,8 @@
-import type { ComponentType, CSSProperties } from 'react';
-import { FaAws } from 'react-icons/fa';
+import { FaAws, FaLinkedin } from 'react-icons/fa';
 import { SiClaude, SiDocker } from 'react-icons/si';
-import { LinkedinIcon } from '@/components/brand-icons';
+import type { Certification } from '@/types';
 
-type Certification = {
-  name: string;
-  issuer: string;
-  year: number;
-  icon: ComponentType<{ className?: string; style?: CSSProperties }>;
-  color: string;
-};
-
-export const certifications: Certification[] = [
+export const certifications: readonly Certification[] = [
   {
     name: 'Introduction to Model Context Protocol',
     issuer: 'Claude Academy',
@@ -30,14 +21,14 @@ export const certifications: Certification[] = [
     name: 'SEO Foundations',
     issuer: 'LinkedIn',
     year: 2023,
-    icon: LinkedinIcon,
+    icon: FaLinkedin,
     color: '#0A66C2',
   },
   {
     name: 'GraphQL Essential Training',
     issuer: 'LinkedIn',
     year: 2023,
-    icon: LinkedinIcon,
+    icon: FaLinkedin,
     color: '#0A66C2',
   },
   {
