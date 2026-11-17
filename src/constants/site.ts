@@ -1,6 +1,7 @@
 import { formatNumber } from '@/utils';
 
-export const SITE_URL = 'https://nishkohli96.vercel.app';
+export const SITE_URL = 'https://www.nishkohli.in/';
+// export const SITE_URL = 'https://nishkohli96.vercel.app';
 export const SITE_NAME = 'Nishant Kohli';
 export const SITE_TITLE = 'Nishant Kohli — Senior Full Stack Engineer';
 
